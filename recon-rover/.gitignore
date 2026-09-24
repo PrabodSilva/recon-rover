@@ -1,0 +1,5 @@
+*.json      #saved scans
+*.png       #heatmap images
+*.txt       #audit reports and notes
+__pycache__/
+venv/           #python temporary folders
