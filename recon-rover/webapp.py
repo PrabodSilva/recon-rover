@@ -5,9 +5,9 @@ import analyzer
 app = Flask(__name__)
 
 
-@app.route("/api/scan")     # a second address that returns only data(JSON),not a page.jsonify turns your Python list into JSON
+@app.route("/api/scan")
 def api_scan():
-    return jsonify(analyzer.analyze(scanner.scan()))        #oneline that run the whole pipeline:scan then grade.This is why splitting into modules paid off - the whole project reduces to one readable line
+    return jsonify(analyzer.analyze(scanner.scan()))
 
 
 @app.route("/")
@@ -36,7 +36,7 @@ PAGE = """<!DOCTYPE html>
 
   <script>
     function refresh() {
-      fetch("/api/scan").then(r => r.json()).then(nets => {              #the browser asks the data address
+      fetch("/api/scan").then(r => r.json()).then(nets => {
         document.getElementById("count").textContent =
             "Found " + nets.length + " networks";
         let rows = "<tr><th>SSID</th><th>Channel</th><th>Signal</th>" +
@@ -52,7 +52,7 @@ PAGE = """<!DOCTYPE html>
       });
     }
     refresh();
-    setInterval(refresh, 3000);     #do that every 3 seconds
+    setInterval(refresh, 3000);
   </script>
 </body>
 </html>"""

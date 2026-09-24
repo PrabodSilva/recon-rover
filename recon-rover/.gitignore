@@ -1,5 +1,12 @@
-*.json      #saved scans
-*.png       #heatmap images
-*.txt       #audit reports and notes
+# saved scans - contain private network names
+*.json
+
+# heatmap images
+*.png
+
+# audit reports and notes
+*.txt
+
+# python temporary folders
 __pycache__/
-venv/           #python temporary folders
+venv/
